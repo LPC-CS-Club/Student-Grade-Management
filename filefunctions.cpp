@@ -11,7 +11,7 @@ void readFromFile(Student& student)
  	 * When you open the file, you need to specify the path that the file is located in. This is not always the case, but
 	 * I happened to run into an error when I didn't specify it. Replace the entire first portion with your own path directory.
 	 */
-	file.open("C:\\Users\\legen\\eclipse-workspace\\Student Management System\\Student-Grade-Management\\" + student.studentID + ".txt");
+	file.open("C:\\Users\\19254\\Documents\\GitHub\\Grade managment\\Student-Grade-Management\\" + student.studentID + ".txt");
 
 	// This checks if the file is opening or not. Someone put a better error message here pls :3
 	if (!file.is_open())
