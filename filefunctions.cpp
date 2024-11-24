@@ -48,7 +48,7 @@ void readFromFile(Student& student)
 	file.close();
 }
 
-void writeToFile(Student& Student)
+void writeToFile(Student& student)
 {
 	ofstream file;
 	file.open("studentID.txt",ios::app);
