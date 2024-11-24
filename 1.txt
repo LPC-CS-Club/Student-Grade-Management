@@ -1,0 +1,2 @@
+math exam 90 100 0.5
+english essay 50 50 0.3

@@ -48,8 +48,27 @@ void readFromFile(Student& student)
 	file.close();
 }
 
-void writeToFile(Student& student)
+void writeToFile(Student& Student)
 {
 	ofstream file;
 
 }
+
+void UpdateFile(Student& student)
+{
+	ofstream file;
+    file.open("C:\\Users\\19254\\Documents\\GitHub\\Grade managment\\Student-Grade-Management\\" + student.studentID + ".txt");
+    for (Assignment assignment : student.records)
+	{
+        file << assignment.name << " " << assignment.description << " " 
+		<< assignment.grade << " " << assignment.maxGrade << " " << assignment.weight;
+		
+		// After adding new line, the readfromfile function would think 
+		// it's a new assignment and will add it to records
+		// that's why here is an if that checks for last assignment
+		if (assignment.name != student.records.back().name) file << endl;
+	}
+	
+	file.close();
+}
+
