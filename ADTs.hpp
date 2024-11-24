@@ -2,6 +2,7 @@
 # include <iostream>
 # include <vector>
 # include <algorithm>
+// pgrma once here is needed so that only one instadnce of this file is shared
 #pragma once
 using namespace std;
 
@@ -19,7 +20,7 @@ struct Student
 	string studentID;
 	vector<Assignment> records;
 
-	// Get assignment based on name specified
+	// Get assignment index based on name specified
 	int GetAssignmentIndex(string assignmentToFind)
 	{
     	auto assignmentPointer = find_if(records.begin(), records.end(), 

@@ -54,6 +54,7 @@ void writeToFile(Student& Student)
 
 }
 
+// Rewrites a student file entirely with new information
 void UpdateFile(Student& student)
 {
 	ofstream file;

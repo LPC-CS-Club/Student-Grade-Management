@@ -7,7 +7,7 @@
 #include <map>
 #include "filefunctions.hpp"
 // This is the remove grades function!
-// initial records
+// initial testing records
 //math exam 90 100 0.5
 //english essay 50 50 0.3
 
@@ -23,7 +23,7 @@ map<studentInforDoubles, function<double&(Assignment&)>> doubleFunctions =
 	{weight, [](Assignment& a) -> double& {return a.weight;}}
 };
 
-// Removes name from an assignment
+// Removes any info that a student has from an assignment by setting it to -1 if it's double and NA if it's a string 
 void Remove(Student& student, string assignmentName, studentInfoStrings studentInfo)
 {
     // Finding the assignment and removing the grade by changing it to -1
@@ -45,6 +45,7 @@ void Remove(Student& student, string assignmentName, studentInforDoubles student
     // Update the file
     UpdateFile(student);
 }
+
 // Removes an assignment from a student 
 void RemoveAssignment(Student& student, string assignmentName)
 {

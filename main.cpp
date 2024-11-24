@@ -31,6 +31,7 @@ int main()
 		     << "Max grade: " << Jacquavius.records.at(i).maxGrade << endl
 		     << "Weight: " << Jacquavius.records.at(i).weight << endl << endl;
 	}	
+	// It is better not to remove names because otherways there is goning to be an error
 	Remove(Jacquavius, "math", description);
 	Remove(Jacquavius, "math", grade);
 	Remove(Jacquavius, "math", maxGrade);
