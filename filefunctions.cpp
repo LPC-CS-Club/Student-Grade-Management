@@ -11,7 +11,7 @@ void readFromFile(Student& student)
  	 * When you open the file, you need to specify the path that the file is located in. This is not always the case, but
 	 * I happened to run into an error when I didn't specify it. Replace the entire first portion with your own path directory.
 	 */
-	file.open("C:\\Users\\legen\\eclipse-workspace\\Student Management System\\Student-Grade-Management\\" + student.studentID + ".txt");
+	file.open("C:\\Users\\19254\\Documents\\GitHub\\Grade managment\\Student-Grade-Management\\" + student.studentID + ".txt");
 
 	// This checks if the file is opening or not. Someone put a better error message here pls :3
 	if (!file.is_open())
@@ -69,3 +69,23 @@ void writeToFile(Student& student)
 
 file.close();
 }
+
+// Rewrites a student file entirely with new information
+void UpdateFile(Student& student)
+{
+	ofstream file;
+    file.open("C:\\Users\\19254\\Documents\\GitHub\\Grade managment\\Student-Grade-Management\\" + student.studentID + ".txt");
+    for (Assignment assignment : student.records)
+	{
+        file << assignment.name << " " << assignment.description << " " 
+		<< assignment.grade << " " << assignment.maxGrade << " " << assignment.weight;
+		
+		// After adding new line, the readfromfile function would think 
+		// it's a new assignment and will add it to records
+		// that's why here is an if that checks for last assignment
+		if (assignment.name != student.records.back().name) file << endl;
+	}
+	
+	file.close();
+}
+
